@@ -3,7 +3,7 @@ About r-mbess
 
 Home: http://nd.edu/~kkelley/site/MBESS.html
 
-Package license: GPL-2 | GPL-3
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 
