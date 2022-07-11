@@ -5,7 +5,7 @@ Home: http://nd.edu/~kkelley/site/MBESS.html
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mbess-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mbess-feedstock/blob/main/LICENSE.txt)
 
 Summary: Implements methods that useful in designing research studies and analyzing data, with  particular emphasis on methods that are developed for or used within the behavioral,  educational, and social sciences (broadly defined). That being said, many of the methods  implemented within MBESS are applicable to a wide variety of disciplines. MBESS has a  suite of functions for a variety of related topics, such as effect sizes, confidence intervals  for effect sizes (including standardized effect sizes and noncentral effect sizes), sample size planning (from the accuracy in parameter estimation [AIPE], power analytic, equivalence, and  minimum-risk point estimation perspectives), mediation analysis, various properties of  distributions, and a variety of utility functions. MBESS (pronounced 'em-bes') was originally  an acronym for 'Methods for the Behavioral, Educational, and Social Sciences,' but at this  point MBESS contains methods applicable and used in a wide variety of fields and is an  orphan acronym, in the sense that what was an acronym is now literally its name. MBESS has  greatly benefited from others, see <http://nd.edu/~kkelley/site/MBESS.html> for a detailed  list of those that have contributed and other details.
 
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4229&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-mbess-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4229&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-mbess-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -39,23 +39,49 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-mbess` can be installed with:
+Once the `conda-forge` channel has been enabled, `r-mbess` can be installed with `conda`:
 
 ```
 conda install r-mbess
 ```
 
-It is possible to list all of the versions of `r-mbess` available on your platform with:
+or with `mamba`:
+
+```
+mamba install r-mbess
+```
+
+It is possible to list all of the versions of `r-mbess` available on your platform with `conda`:
 
 ```
 conda search r-mbess --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search r-mbess --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search r-mbess --channel conda-forge
+
+# List packages depending on `r-mbess`:
+mamba repoquery whoneeds r-mbess --channel conda-forge
+
+# List dependencies of `r-mbess`:
+mamba repoquery depends r-mbess --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -65,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
