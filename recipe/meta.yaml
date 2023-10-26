@@ -1,4 +1,4 @@
-{% set version = "4.9.2" %}
+{% set version = "4.9.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/MBESS_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/MBESS/MBESS_{{ version }}.tar.gz
-  sha256: 8af2f9df907371114f6670d3364e2a5868bc64cb993a2908673998d1edf90433
+  sha256: a359f45dc4286a757125a7eebfb8725b6f19a586b86af43061c0f2177943f016
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
